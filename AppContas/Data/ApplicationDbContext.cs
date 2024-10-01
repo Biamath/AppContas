@@ -6,7 +6,7 @@ namespace AppContas.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+       // public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
