@@ -1,0 +1,27 @@
+﻿@page "{id:int}"
+@model AppContas.Areas.Identity.Pages.Usuarios.DetalhesModel
+@{
+    ViewData["Title"] = "Detalhes do Usuário";
+}
+
+
+<h2>Detalhes do Usuário</h2>
+
+<div>
+    <h4>Usuário</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Nome</dt>
+        <dd class="col-sm-10">@Model.Usuario.Nome</dd>
+
+        <dt class="col-sm-2">E-mail</dt>
+        <dd class="col-sm-10">@Model.Usuario.Email</dd>
+
+        <dt class="col-sm-2">Data de Nascimento</dt>
+        <dd class="col-sm-10">@Model.Usuario.DataNascimento.ToString("dd/MM/yyyy")</dd>
+    </dl>
+</div>
+
+<a class="btn btn-primary" asp-page="/Usuarios/Editar" asp-route-id="@Model.Usuario.Id">Editar</a>
+<a class="btn btn-danger" asp-page="/Usuarios/Excluir" asp-route-id="@Model.Usuario.Id">Excluir</a>
+<a class="btn btn-secondary" asp-page="/Usuarios/Index">Voltar</a>

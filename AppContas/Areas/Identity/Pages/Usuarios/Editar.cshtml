@@ -1,0 +1,35 @@
+﻿@page
+@model AppContas.Areas.Identity.Pages.Usuarios.EditarModel
+@{
+    ViewData["Title"] = "Editar Usuário";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Usuário</h4>
+<hr />
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Usuario.Nome" class="control-label"></label>
+        <input asp-for="Usuario.Nome" class="form-control" />
+        <span asp-validation-for="Usuario.Nome" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Usuario.Email" class="control-label"></label>
+        <input asp-for="Usuario.Email" class="form-control" />
+        <span asp-validation-for="Usuario.Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Usuario.DataNascimento" class="control-label"></label>
+        <input asp-for="Usuario.DataNascimento" class="form-control" />
+        <span asp-validation-for="Usuario.DataNascimento" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="Usuario.Id" />
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a asp-page="/Usuarios/Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
